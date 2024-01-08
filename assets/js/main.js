@@ -58,7 +58,6 @@ function displayWeather(data) {
 }
 
 
-
 function getWeatherIcon(description) {
     const lowercaseDescription = description.toLowerCase();
 
@@ -72,7 +71,7 @@ function getWeatherIcon(description) {
         return '<img src="./assets/img/eissig.png" alt="Eisig" style="width: 100px; height: 100px;">';
     } else if (lowercaseDescription.includes('rain')  || lowercaseDescription.includes('light rain')) {
         return '<img src="./assets/img/regen.png" alt="Regen" style="width: 100px; height: 100px;">';
-    } else if (lowercaseDescription.includes('heavy snow')) {
+    } else if (lowercaseDescription.includes('heavy snow') || lowercaseDescription.includes('light snow')) {
         return '<img src="./assets/img/schnee.png" alt="Schnee" style="width: 100px; height: 100px;">';
     } else {
         return description;
@@ -82,4 +81,3 @@ function getWeatherIcon(description) {
 function calculateFontSize(temperature) {
     return `${Math.max(20, 40 - temperature)}px`;
 }
-
