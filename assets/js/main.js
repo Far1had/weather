@@ -37,8 +37,9 @@ function displayWeather(data) {
         const weatherDescription = data.weather[0].description.toLowerCase();
         weatherIconElement.innerHTML = getWeatherIcon(weatherDescription);
 
-        const localTime = new Date((data.dt + data.timezone) * 1000);
+        const localTime = new Date((data.dt + data.timezone) * 1000); // Berücksichtige die Zeitzone
         localTimeElement.textContent = `Lokalzeit: ${localTime.toLocaleTimeString()}`;
+
 
         windSpeedElement.textContent = `Windgeschwindigkeit: ${data.wind ? data.wind.speed : 'N/A'} m/s`;
         cloudinessElement.textContent = `Bewölkung: ${data.weather[0].description || 'N/A'}`;
