@@ -16,30 +16,10 @@ Wir können zusätzliche Funktionen hinzufügen, wie beispielsweise Wetterprogno
 Ressourcen
 Open Weather API Dokumentation
 Beispielcode
-Hier ist ein einfaches Beispiel in Python mit der requests-Bibliothek:
 
-python
-Copy code
-import requests
 
-def get_weather(api_key, city):
-    base_url = "https://api.openweathermap.org/data/2.5/weather"
-    params = {"q": city, "appid": api_key}
 
-    response = requests.get(base_url, params=params)
 
-    if response.status_code == 200:
-        weather_data = response.json()
-        # Hier können wir die Daten weiterverarbeiten und die App gestalten
-        print(weather_data)
-    else:
-        print(f"Fehler beim Abrufen der Wetterdaten: {response.status_code}")
-
-# Beispielaufruf
-api_key = "DEIN_API_KEY"
-stadt = "Berlin"
-get_weather(api_key, stadt)
-Ersetze DEIN_API_KEY durch deinen tatsächlichen API-Key und wir können gemeinsam den Code nach unseren Bedürfnissen anpassen.
 
 Viel Spaß beim gemeinsamen Entwickeln der Wetter-App!
 
