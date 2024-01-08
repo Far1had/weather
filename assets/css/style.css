@@ -7,6 +7,13 @@
     src: url(../fonts/Inter/static/Inter-Bold.ttf);
 }
 
+:root {
+    --primary: #88d5bf;
+    --secondary: #868ff1;
+    --tertiary: #f3b389;
+    --color-white: #fff;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -17,15 +24,60 @@
 
 body {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    height: 0;
+    height: 100vh;
     margin: 0;
-    transition: background 0.5s;
-    font-family: inter;
+    background-color: #f0f0f0;
+    font-family: 'inter';
+    background: linear-gradient(
+    180deg,
+    var(--secondary) 0%,
+    var(--tertiary) 100%)
 }
 
-image{
-    width: 100px;
-    height: 100px;
+#weather-container {
+    text-align: center;
+    background:transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+h2 {
+    margin-bottom: 20px;
+}
+
+#locationInput {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#weatherInfo {
+    margin-top: 20px;
+}
+
+#otherInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    
+}
+
+

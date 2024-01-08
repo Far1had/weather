@@ -34,7 +34,7 @@ const displayWeather =(data) => {
 
     if (data && data.name && data.main && data.weather && data.sys && data.coord) {
 
-        locationNameElement.textContent = `Wetter in ${data.name}`;
+        locationNameElement.textContent = ` ${data.name}`;
 
         if (data.main.temp !== undefined) {
             temperatureElement.innerHTML = `<div id="temperatureValue">${Math.round(data.main.temp - 273.15)}°C</div>`;
@@ -45,7 +45,7 @@ const displayWeather =(data) => {
         const weatherDescription = data.weather[0].description.toLowerCase();
         weatherIconElement.innerHTML = getWeatherIcon(weatherDescription);
 
-        localTimeElement.textContent = `Local Time: ${new Date(data.dt * 1000).toLocaleTimeString()}`;
+        localTimeElement.textContent = `Local Time:${new Date(data.dt * 1000).toLocaleTimeString()}`;
         windSpeedElement.textContent = `WindSpeed: ${data.wind ? data.wind.speed : 'N/A'} m/s`;
         cloudinessElement.textContent = `Cloudiness: ${data.weather[0].description || 'N/A'}`;
         pressureElement.textContent = `Pressure: ${data.main.pressure ? data.main.pressure + ' hPa' : 'N/A'}`;
