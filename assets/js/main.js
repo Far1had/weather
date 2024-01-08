@@ -60,10 +60,8 @@ function displayWeather(data) {
 }
 
 function getWeatherIcon(description) {
-    // Umwandele die Wetterbeschreibung in Kleinbuchstaben, um die Vergleiche zu vereinfachen
     const lowercaseDescription = description.toLowerCase();
 
-    // Überprüfe verschiedene Wetterbedingungen und weise die entsprechenden Bilder zu
     if (lowercaseDescription.includes('sun') || lowercaseDescription.includes('clear sky') || lowercaseDescription.includes('haze') || lowercaseDescription.includes('smoke')) {
         return '<img src="./assets/img/sonnig.png" alt="Sonnig" style="width: 50px; height: 50px;">';
     } else if (lowercaseDescription.includes('few clouds') || lowercaseDescription.includes('overcast')) {
@@ -77,7 +75,6 @@ function getWeatherIcon(description) {
     } else if (lowercaseDescription.includes('heavy snow')) {
         return '<img src="./assets/img/schnee.png" alt="Schnee" style="width: 50px; height: 50px;">';
     } else {
-        // Wenn keine Übereinstimmung gefunden wurde, gib die Wetterbeschreibung zurück
         return description;
     }
 }
