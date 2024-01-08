@@ -40,8 +40,9 @@ body {
     text-align: center;
     background:transparent;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 30px outset #f3b389;
+    border-radius: 30px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -58,7 +59,7 @@ h2 {
 button {
     padding: 10px;
     font-size: 16px;
-    background-color: #4CAF50;
+    background-color: #4c6faf;
     color: white;
     border: none;
     border-radius: 5px;
@@ -66,7 +67,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #164bad;
 }
 
 #weatherInfo {
@@ -79,5 +80,4 @@ button:hover {
     gap: 5px;
     
 }
-
 
