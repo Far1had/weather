@@ -64,9 +64,9 @@ function getWeatherIcon(description) {
 
     if (lowercaseDescription.includes('sun') || lowercaseDescription.includes('clear sky') || lowercaseDescription.includes('haze') || lowercaseDescription.includes('smoke')) {
         return '<img src="./assets/img/sonnig.png" alt="Sonnig" style="width: 50px; height: 50px;">';
-    } else if (lowercaseDescription.includes('few clouds') || lowercaseDescription.includes('overcast')) {
+    } else if (lowercaseDescription.includes('few clouds') || lowercaseDescription.includes('overcast') || lowercaseDescription.includes('broken clouds')) {
         return '<img src="./assets/img/wolkig.png" alt="Wolkig" style="width: 50px; height: 50px;">';
-    } else if (lowercaseDescription.includes('overcast clouds')) {
+    } else if (lowercaseDescription.includes('overcast clouds') || lowercaseDescription.includes('scattered clouds')) {
         return '<img src="./assets/img/teilSonneTeilewolkeregen.png" alt="Teilweise Sonne, Teile Wolken, Regen" style="width: 50px; height: 50px;">';
     } else if (lowercaseDescription.includes('ice')) {
         return '<img src="./assets/img/eissig.png" alt="Eisig" style="width: 50px; height: 50px;">';
