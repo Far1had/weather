@@ -1,19 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Wetter App</title>
+    <title>Wetter-App</title>
+    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Füge hier bei Bedarf dein eigenes CSS hinzu -->
 </head>
 <body>
-    <section class="container">
-        <div id="searchAndOutput">
-            <input type="text" id="locationInput" placeholder="Stadt oder Land eingeben">
-            <button onclick="checkWeather()">Wetter prüfen</button>
-            <h2>Wetter in <span id="city"></span></h2>
+
+    <div id="weather-container">
+        <h1>Wetter-App</h1>
+        
+        <input type="text" id="locationInput" placeholder="Stadt oder Land eingeben">
+        <button onclick="checkWeather()">Check Wetter</button>
+
+        <div id="weatherInfo">
+            <h2 id="locationName">Wetter in </h2>
+            <div id="temperature"></div>
+            <div id="weatherIcon"></div>
+            <div id="otherInfo">
+                <div id="localTime"></div>
+                <div id="windSpeed"></div>
+                <div id="cloudiness"></div>
+                <div id="pressure"></div>
+                <div id="humidity"></div>
+                <div id="sunrise"></div>
+                <div id="sunset"></div>
+                <div id="geoCoords"></div>
+            </div>
         </div>
-    </section>
-    <script src="./assets/js/main.js"></script>
+    </div>
+
+    <script src="./assets/js/main.js"></script> <!-- Lade hier dein JavaScript-Skript -->
 </body>
 </html>
