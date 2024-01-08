@@ -1,7 +1,7 @@
 const apiKey = "41ad82297cf0fd9fcb842c3a02bb8abd";
 
 
-function checkWeather() {
+const checkWeather = () => {
     const locationName = document.getElementById("locationInput").value;
 
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${locationName}&appid=${apiKey}`;
@@ -17,7 +17,7 @@ function checkWeather() {
         });
 }
 
-function displayWeather(data) {
+const displayWeather =(data) => {
 
     const locationNameElement = document.getElementById("locationName");
     const temperatureElement = document.getElementById("temperature");
@@ -45,21 +45,21 @@ function displayWeather(data) {
         const weatherDescription = data.weather[0].description.toLowerCase();
         weatherIconElement.innerHTML = getWeatherIcon(weatherDescription);
 
-        localTimeElement.textContent = `Lokalzeit: ${new Date(data.dt * 1000).toLocaleTimeString()}`;
-        windSpeedElement.textContent = `Windgeschwindigkeit: ${data.wind ? data.wind.speed : 'N/A'} m/s`;
-        cloudinessElement.textContent = `Bewölkung: ${data.weather[0].description || 'N/A'}`;
-        pressureElement.textContent = `Luftdruck: ${data.main.pressure ? data.main.pressure + ' hPa' : 'N/A'}`;
-        humidityElement.textContent = `Luftfeuchtigkeit: ${data.main.humidity ? data.main.humidity + ' %' : 'N/A'}`;
-        sunriseElement.textContent = `Sonnenaufgang: ${data.sys.sunrise ? new Date(data.sys.sunrise * 1000).toLocaleTimeString() : 'N/A'}`;
-        sunsetElement.textContent = `Sonnenuntergang: ${data.sys.sunset ? new Date(data.sys.sunset * 1000).toLocaleTimeString() : 'N/A'}`;
-        geoCoordsElement.textContent = `Geografische Koordinaten: [${data.coord.lat || 'N/A'}, ${data.coord.lon || 'N/A'}]`;
+        localTimeElement.textContent = `Local Time: ${new Date(data.dt * 1000).toLocaleTimeString()}`;
+        windSpeedElement.textContent = `WindSpeed: ${data.wind ? data.wind.speed : 'N/A'} m/s`;
+        cloudinessElement.textContent = `Cloudiness: ${data.weather[0].description || 'N/A'}`;
+        pressureElement.textContent = `Pressure: ${data.main.pressure ? data.main.pressure + ' hPa' : 'N/A'}`;
+        humidityElement.textContent = `Humidity: ${data.main.humidity ? data.main.humidity + ' %' : 'N/A'}`;
+        sunriseElement.textContent = `Sunrise: ${data.sys.sunrise ? new Date(data.sys.sunrise * 1000).toLocaleTimeString() : 'N/A'}`;
+        sunsetElement.textContent = `Sunset: ${data.sys.sunset ? new Date(data.sys.sunset * 1000).toLocaleTimeString() : 'N/A'}`;
+        geoCoordsElement.textContent = `Geo Coords: [${data.coord.lat || 'N/A'}, ${data.coord.lon || 'N/A'}]`;
     } else {
         console.error("Ungültige oder unvollständige Datenstruktur in der API-Antwort.");
         alert("Ungültige oder unvollständige Datenstruktur in der API-Antwort.");
     }
 }
 
-function getWeatherIcon(description) {
+const getWeatherIcon = (description) => {
     const lowercaseDescription = description.toLowerCase();
 
     if (lowercaseDescription.includes('sun') || lowercaseDescription.includes('clear sky') || lowercaseDescription.includes('haze') || lowercaseDescription.includes('smoke')) {
