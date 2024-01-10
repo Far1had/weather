@@ -41,6 +41,7 @@ function displayWeather(data) {
         const weatherDescription = data.weather[0].description.toLowerCase();
         weatherIconElement.innerHTML = getWeatherIcon(weatherDescription);
 
+        
         const localTime = new Date(data.dt * 1000 + data.timezone * 1000); 
         localTimeElement.textContent = `Lokalzeit: ${localTime.toLocaleTimeString()}`;
 
@@ -71,7 +72,7 @@ function getWeatherIcon(description) {
         return '<img src="./assets/img/eissig.png" alt="Eisig" style="width: 100px; height: 100px;">';
     } else if (lowercaseDescription.includes('rain')  || lowercaseDescription.includes('light rain')) {
         return '<img src="./assets/img/regen.png" alt="Regen" style="width: 100px; height: 100px;">';
-    } else if (lowercaseDescription.includes('heavy snow') || lowercaseDescription.includes('light snow')) {
+    } else if (lowercaseDescription.includes('heavy snow') || lowercaseDescription.includes('light snow') || lowercaseDescription.includes('snow')) {
         return '<img src="./assets/img/schnee.png" alt="Schnee" style="width: 100px; height: 100px;">';
     } else {
         return description;
